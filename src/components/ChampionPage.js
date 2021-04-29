@@ -25,6 +25,9 @@ const ChampionPage = ({champions}) => {
                 <div className="page--squareData">
                     {champions[name].blurb}
                 </div>
+                <div className="page--squareData">
+                    {champions[name].blurb}
+                </div>
             </div>
         </div>
     )
