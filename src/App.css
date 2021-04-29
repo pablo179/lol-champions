@@ -1,38 +1,192 @@
 .App {
-  text-align: center;
+  width: 100%;
+  background: url('https://wallpapercave.com/wp/DgwazAh.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.championsContainer {
+  width: 80%;
+  height: 80vh;
+  border: 2px solid #A68E5B;
+  background: rgba(18,28,33, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  overflow-y: scroll;
+  justify-content: flex-start;
+  align-content: flex-start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.champion {
+  width: 170px;
+  height: 230px;
+  margin: 5px;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.championImage {
+  width: 108%;
+  height: 108%;
+  margin: -4% 0 0 -4%;
+  transition: all .3S ease;
+  object-fit: cover;
+}
+
+.championName{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgb(71, 71, 80);
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-family: system-ui;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 25px;
+  transition: all .3S ease;
+}
+
+.champion:hover .championImage{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.champion:hover .championName {
+  padding-left: 17px;
+  background: rgb(103, 103, 117);
+}
+
+.championsContainer a {
+  height: fit-content;
+}
+
+.championsContainer::-webkit-scrollbar {
+  width: 10px;
+  padding: 0 3px;
+}
+
+.championsContainer::-webkit-scrollbar-track {
+  background: none;
+  border: none;
+}
+
+.championsContainer::-webkit-scrollbar-thumb { 
+  background: #A68E5B;
+  border-radius: 8px;
+}
+
+.page {
+  background: #010913;
+  width: 100%;
+  height: 100%;
+} 
+.page--imageContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  mask-image: linear-gradient(rgb(1,9,19) 60%, rgba(0,0,0,0) 98%);
+}
+
+.page--backgroundImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(5px);
+}
+
+.page--championImage {
+  width: 60%;
+  margin: 20px 0;
+  z-index: 2;
+}
+
+.dataContainer {
+  min-height: 275px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: -155px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.page--titles {
+  width: auto;
+  z-index: 2;
+  font-family: system-ui;
+  font-weight: 500;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.page--titles p:nth-child(2) {
+  font-size: 100px;
+  font-style: italic;
+  width: 100%;
+}
+.page--squareData{
+  width: 50%;
+  letter-spacing: 1px;
+  z-index: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.borders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  background: grey;
+  width: 50%;
+  height: 1px;
+}
+
+.search-container {
+  width: 80%;
+  padding-bottom: 10px;
+  position: relative;
+}
+.search-container .search {
+  height: 37px;
+  border: 2px solid #A68E5B;
+  background: rgba(18,28,33, 0.6);
+  width: 0;
+  max-width: 270px;
+  border-radius: 7px;
+  padding: 0 5px 0 35px;
+  outline: none;
+  font-family: system-ui;
+  font-weight: 500;
+  font-size: 17px;
+  color: white;
+  transition: all .7s ease;
+}
+
+.search-container .search:hover, .search--icon:hover ~ .search, .search:valid {
+  width: 100%;
+  cursor: pointer;
+}
+
+.search--icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #A68E5B;
 }
