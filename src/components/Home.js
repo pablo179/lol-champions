@@ -41,12 +41,13 @@ class Home extends Component {
           <form className="search-container" onSubmit={(e)=> e.preventDefault()} >
             <FontAwesomeIcon icon={isFiltering ? faTimes : faSearch} className="search--icon" size="lg" onClick={deleteFilter} />
             <input type="text" required className="search" placeholder="search..." onChange={filter} value={filterText}/>
+            asasdasdsadasd
           </form>
-          <div className="championsContainer">
+          {/* <div className="championsContainer">
             {
               filtered.map(item => <ChampionCard propertyName={item} {...original[item]} /> )
             }
-          </div>
+          </div> */}
         </div>
       );
     }
