@@ -42,11 +42,11 @@ class Home extends Component {
             <FontAwesomeIcon icon={isFiltering ? faTimes : faSearch} className="search--icon" size="lg" onClick={deleteFilter} />
             <input type="text" required className="search" placeholder="search..." onChange={filter} value={filterText}/>
           </form>
-          <div className="championsContainer">
+          {/* <div className="championsContainer">
             {
               filtered.map(item => <ChampionCard propertyName={item} {...original[item]} /> )
             }
-          </div>
+          </div> */}
         </div>
       );
     }
