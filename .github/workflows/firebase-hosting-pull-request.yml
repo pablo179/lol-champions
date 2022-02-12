@@ -2,8 +2,20 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on PR
-'on': pull_request
+on:
+  pull_request: 
+    paths:
+      - "/"
 jobs:
+  lint:
+    name: run linters
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout
+      - name: install dependencies
+        run: yarn
+      - name: run linter
+        run: yarn lint
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
