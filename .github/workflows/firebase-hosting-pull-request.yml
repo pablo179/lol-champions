@@ -3,9 +3,9 @@
 
 name: Deploy to Firebase Hosting on PR
 on:
-  pull_request: 
-    paths:
-      - "/"
+  push: 
+    paths-ignore:
+      - "README.md"
 jobs:
   lint:
     name: run linters

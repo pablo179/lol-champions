@@ -43,11 +43,11 @@ class Home extends Component {
             <input type="text" required className="search" placeholder="search..." onChange={filter} value={filterText}/>
             asasdasdsadasd
           </form>
-          {/* <div className="championsContainer">
+          <div className="championsContainer">
             {
               filtered.map(item => <ChampionCard propertyName={item} {...original[item]} /> )
             }
-          </div> */}
+          </div>
         </div>
       );
     }
