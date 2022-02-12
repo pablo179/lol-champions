@@ -11,7 +11,7 @@ jobs:
     name: run linters
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@v2
       - name: install dependencies
         run: yarn
       - name: run linter
